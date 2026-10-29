@@ -1,0 +1,181 @@
+/* Sree Radha Beauty Parlour - Luxury Editorial Design System */
+
+:root {
+  /* Brand Luxury Palette */
+  --ivory: #FFF9F4;
+  --ivory-light: #FFFCF9;
+  --blush: #F4DCE1;
+  --blush-light: #FAF0F3;
+  --blush-subtle: #FDF7F9;
+  --dusty-rose: #C98791;
+  --dusty-rose-light: #DFC0C6;
+  --deep-wine: #6F3546;
+  --deep-wine-dark: #4A1E2D;
+  --deep-wine-rich: #391421;
+  --champagne-gold: #C6A46A;
+  --champagne-gold-light: #E7D1A8;
+  --champagne-gold-dark: #9E7D47;
+  --soft-beige: #EDE2D6;
+  --soft-beige-light: #F7F3EE;
+
+  /* Neutrals & Text */
+  --color-white: #FFFFFF;
+  --text-main: #2A1C21;
+  --text-body: #544147;
+  --text-muted: #826E75;
+  --text-light: #FBF6F7;
+
+  /* Borders & Glass */
+  --border-gold: rgba(198, 164, 106, 0.32);
+  --border-gold-strong: rgba(198, 164, 106, 0.65);
+  --border-rose: rgba(201, 135, 145, 0.28);
+  --glass-bg: rgba(255, 249, 244, 0.85);
+  --glass-card: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(198, 164, 106, 0.22);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px -1px rgba(74, 30, 45, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(74, 30, 45, 0.08), 0 2px 6px -1px rgba(198, 164, 106, 0.08);
+  --shadow-lg: 0 16px 36px -6px rgba(74, 30, 45, 0.12), 0 4px 12px -2px rgba(198, 164, 106, 0.1);
+  --shadow-gold: 0 10px 30px -4px rgba(198, 164, 106, 0.35);
+  --shadow-wine: 0 12px 32px -4px rgba(111, 53, 70, 0.35);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-smooth: 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-lux: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory);
+  color: var(--text-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 100% 0%, rgba(244, 220, 225, 0.35) 0%, transparent 40%),
+                    radial-gradient(circle at 0% 100%, rgba(237, 226, 214, 0.35) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Luxury Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--deep-wine);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--blush);
+  color: var(--deep-wine);
+}
+
+/* Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--deep-wine);
+  color: var(--ivory);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  z-index: 9999;
+  transition: top var(--transition-smooth);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
